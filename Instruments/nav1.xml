@@ -1,0 +1,305 @@
+<?xml version="1.0"?>
+
+<!--
+Modified NAV1 gauge instrument.
+Added background fill for shaped panel hack.
+October 2000
+John Check <j4strngs@rockfish.net>
+
+Based on Default by David Megginson, david@megginson.com
+
+This is an instrument configuration file for the open-source flight
+simulator FlightGear (www.flightgear.org).  The file is an XML-encoded
+FlightGear property list defining the instrument's layers and actions.
+
+Each instrument is composed of layers stacked on top of each other.
+A layer may be a texture (with transparent parts to show the layers
+underneath), text, or a special layer that switches between two
+others (say, to turn an indicator light on or off).  Each layer can
+move independently in proportion to a property value, and text
+can be generated from property values as well: all of the layer's
+movements are defined as transformations.
+
+Actions are hotspots on the instrument that will respond to a mouse
+click.  Actions always modify the values of properties, either by
+adjusting them, toggling them, or swaping them with other
+properties' values.
+-->
+
+<PropertyList>
+ <name>Nav1</name>
+ <w>128</w>
+ <h>128</h>
+
+ <layers>
+ <l0>
+   <texture>
+   <name>bgr</name>
+    <path>Panels/Custom/Textures/dplatetrim.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.0</y1>
+    <x2>0.5</x2>
+    <y2>0.45</y2>
+   </texture>
+   <w>68</w>
+   <h>64</h>
+  <transformations>
+   <t1>
+   <type>x-shift</type>
+   <offset>32</offset>
+   </t1>
+   <t2>
+   <type>y-shift</type>
+   <offset>48</offset>
+   </t2>
+  </transformations>  
+</l0>
+ <l01>
+   <texture>
+   <name>bgl</name>
+    <path>Panels/Custom/Textures/dplatetrim.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.0</y1>
+    <x2>0.5</x2>
+    <y2>0.45</y2>
+   </texture>
+   <w>74</w>
+   <h>64</h>
+  <transformations>
+   <t1>
+   <type>x-shift</type>
+   <offset>-37</offset>
+   </t1>
+   <t2>
+   <type>y-shift</type>
+   <offset>48</offset>
+   </t2>
+  </transformations>  
+</l01>
+  
+  <l1>
+     <name>background</name>
+   <texture>
+    <path>Instruments/Default/Textures/faces-1.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.5</y1>
+    <x2>0.5</x2>
+    <y2>1.0</y2>
+   </texture>
+   <transformations>
+    <t1>
+     <type>rotation</type>
+     <property>/instrumentation/nav[0]/radials/selected-deg</property>
+     <min>0.0</min>
+     <max>360.0</max>
+     <scale>-1.0</scale>
+    </t1>
+   </transformations>
+  </l1>
+  <l2>
+   <name>face</name>
+   <w>64</w>
+   <h>80</h>
+   <texture>
+    <path>Instruments/Default/Textures/misc-1.rgb</path>
+    <x1>0</x1>
+    <y1>0</y1>
+    <x2>0.25</x2>
+    <y2>0.3125</y2>
+   </texture>
+  </l2>
+  <l3>
+   <name>OBS knob</name>
+   <texture>
+    <path>Instruments/Default/Textures/misc-1.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.671875</y1>
+    <x2>0.1640625</x2>
+    <y2>0.8359375</y2>
+   </texture>
+   <w>24</w>
+   <h>24</h>
+   <transformations>
+    <t1>
+     <type>x-shift</type>
+     <offset>-52</offset>
+    </t1>
+    <t2>
+     <type>y-shift</type>
+     <offset>-52</offset>
+    </t2>
+    <t3>
+     <type>rotation</type>
+     <property>/instrumentation/nav[0]/radials/selected-deg</property>
+     <min>0</min>
+     <max>360</max>
+    </t3>
+   </transformations>
+  </l3>
+  <l4>
+   <name>TO/FROM/OFF flag</name>
+   <type>switch</type>
+   <property>/instrumentation/nav[0]/to-flag</property>
+   <layer>
+    <name>TO flag</name>
+    <texture>
+     <path>Instruments/Default/Textures/misc-1.rgb</path>
+     <x1>0.9375</x1>
+     <y1>0.578125</y1>
+     <x2>1.0</x2>
+     <y2>0.625</y2>
+    </texture>
+    <w>16</w>
+    <h>16</h>
+   </layer>
+   <layer>
+    <name>FROM/OFF flag</name>
+    <type>switch</type>
+    <property>/instrumentation/nav[0]/from-flag</property>
+    <layer>
+     <name>FROM flag</name>
+     <texture>
+      <path>Instruments/Default/Textures/misc-1.rgb</path>
+      <x1>0.9375</x1>
+      <y1>0.625</y1>
+      <x2>1.0</x2>
+      <y2>0.671875</y2>
+     </texture>
+     <w>16</w>
+     <h>16</h>
+    </layer>
+    <layer>
+     <name>OFF flag</name>
+     <texture>
+      <path>Instruments/Default/Textures/misc-1.rgb</path>
+      <x1>0.9375</x1>
+      <y1>0.5</y1>
+      <x2>1.0</x2>
+      <y2>0.546875</y2>
+     </texture>
+     <w>16</w>
+     <h>16</h>
+    </layer>
+   </layer>
+   <transformations>
+    <t1>
+     <type>y-shift</type>
+     <offset>-24</offset>
+    </t1>
+   </transformations>
+  </l4>
+  <l5>
+   <name>vertical needle</name>
+   <texture>
+    <path>Instruments/Default/Textures/misc-1.rgb</path>
+    <x1>0.4375</x1>
+    <y1>0.5</y1>
+    <x2>0.453125</x2>
+    <y2>1.0</y2>
+   </texture>
+   <w>4</w>
+   <h>64</h>
+   <transformations>
+    <t1>
+     <type>x-shift</type>
+     <property>/instrumentation/nav[0]/heading-needle-deflection</property>
+     <min>-10.0</min>
+     <max>10.0</max>
+     <scale>3.2</scale>
+    </t1>
+   </transformations>
+  </l5>
+  <l6>
+   <name>glidescope needle</name>
+   <texture>
+    <path>Instruments/Default/Textures/misc-1.rgb</path>
+    <x1>0.4375</x1>
+    <y1>0.5</y1>
+    <x2>0.453125</x2>
+    <y2>1.0</y2>
+   </texture>
+   <w>4</w>
+   <h>64</h>
+   <transformations>
+    <t1>
+     <type>y-shift</type>
+     <property>/instrumentation/nav[0]/gs-needle-deflection</property>
+     <min>-1</min>
+     <max>1</max>
+     <scale>25.6</scale>
+    </t1>
+    <t2>
+     <type>rotation</type>
+     <offset>90</offset>
+    </t2>
+   </transformations>
+  </l6>
+ </layers>
+
+ <actions>
+  <action>
+   <name>small clockwise rotation</name>
+   <button>0</button>
+   <x>-64</x>
+   <y>-64</y>
+   <w>13</w>
+   <h>26</h>
+   <binding>
+   <command>property-adjust</command>
+   <property>/instrumentation/nav[0]/radials/selected-deg</property>
+   <step>-1.0</step>
+   <min>0</min>
+   <max>360</max>
+   <wrap>1</wrap>
+  </binding>
+  </action>
+  <action>
+   <name>large clockwise rotation</name>
+   <button>1</button>
+   <x>-64</x>
+   <y>-64</y>
+   <w>13</w>
+   <h>26</h>
+   <binding>
+   <command>property-adjust</command>
+   <property>/instrumentation/nav[0]/radials/selected-deg</property>
+   <step>-5.0</step>
+   <min>0</min>
+   <max>360</max>
+   <wrap>1</wrap>
+  </binding>
+  </action>
+  <action>
+   <name>small counter-clockwise rotation</name>
+   <x>-51</x>
+   <y>-64</y>
+   <w>13</w>
+   <h>26</h>
+   <binding>
+   <command>property-adjust</command>
+   <property>/instrumentation/nav[0]/radials/selected-deg</property>
+   <step>1.0</step>
+   <min>0</min>
+   <max>360</max>
+   <wrap>1</wrap>
+  </binding>
+  </action>
+  <action>
+   <name>large counter-clockwise rotation</name>
+   <button>1</button>
+   <x>-51</x>
+   <y>-64</y>
+   <w>13</w>
+   <h>26</h>
+   <binding>
+   <command>property-adjust</command>
+   <property>/instrumentation/nav[0]/radials/selected-deg</property>
+   <step>5.0</step>
+   <min>0</min>
+   <max>360</max>
+   <wrap>1</wrap>
+  </binding>
+  </action>
+ </actions>
+
+</PropertyList>

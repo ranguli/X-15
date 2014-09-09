@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<PropertyList>
+   <name>X15 roll indicator face</name>
+   <texture>
+    <path>Aircraft/X15/Instruments/Textures/x15-faces-1.rgb</path>
+    <x1>0.5</x1>
+    <y1>0.15</y1>
+    <x2>1.0</x2>
+    <y2>0.5</y2>
+   </texture>
+</PropertyList>
+

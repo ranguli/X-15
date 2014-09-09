@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+
+<!--
+X-15 accellerometer.
+November 2000
+John Check
+______________________________________________________________________
+
+This is an instrument configuration file for the open-source flight
+simulator FlightGear (www.flightgear.org).  The file is an XML-encoded
+FlightGear property list defining the instrument's layers and actions.
+
+Each instrument is composed of layers stacked on top of each other.
+A layer may be a texture (with transparent parts to show the layers
+underneath), text, or a special layer that switches between two
+others (say, to turn an indicator light on or off).  Each layer can
+move independently in proportion to a property value, and text
+can be generated from property values as well: all of the layer's
+movements are defined as transformations.
+
+Actions are hotspots on the instrument that will respond to a mouse
+click.  Actions always modify the values of properties, either by
+adjusting them, toggling them, or swaping them with other
+properties' values.
+-->
+
+<PropertyList>
+ <name>accelerometer</name>
+ <w-base>110</w-base>
+ <h-base>110</h-base>
+ 
+ <params>
+  <acceleration-g>/velocities/accel-g</acceleration-g>
+ </params>
+ 
+ <layers>
+
+  <layer include="X15-accelerometer-face.xml">
+  <w>110</w>
+  <h>110</h>
+  </layer>
+  
+  <layer include="needle.xml">
+   <w>8</w>
+   <h>45</h>
+   <transformations>
+    <transformation>
+     <type>rotation</type>
+     <property alias="../../../../../params/acceleration-g"/>
+     <min>-50.0</min>
+     <max>120.0</max>
+     <scale>2.0</scale>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>23</offset>
+    </transformation>
+   </transformations>
+  </layer>
+  
+  <layer include="center-cap.xml">
+  <w>16</w>
+  <h>16</h>
+  </layer>
+
+ </layers>
+</PropertyList>

@@ -1,0 +1,578 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <path>X15.ac</path>
+  <offsets>
+ <!--   <x-m>1.7</x-m> -->
+  </offsets>
+ 
+ <!-- include animations for the engine gills-->
+ <!--<animation include="Aircraft/Su-26M/Models/engine-gills.xml"/>-->
+ 
+ <!-- LOD for the model as a whole -->
+
+ <animation>
+  <type>range</type>
+  <min-m>0</min-m>
+  <max-m>10000</max-m>
+ </animation>
+ 
+ <!-- Cockpit LODing -->
+
+<!--
+ <animation>
+  <name>InteriorGroup</name>
+  <object-name>Cockpit</object-name>
+  <object-name>Seat</object-name>
+  <object-name>Head</object-name>
+  <object-name>PilotBody</object-name>
+  <object-name>LeftArm</object-name>
+  <object-name>RightArm</object-name>
+  <object-name>CanopyLatch</object-name>
+  <object-name>Stick</object-name>
+  <object-name>Throttle</object-name>
+ </animation>
+
+ <animation>
+  <type>range</type>
+  <object-name>InteriorGroup</object-name>
+  <min-m>0</min-m>
+  <max-m>300</max-m>
+ </animation>
+ 
+--> 
+
+ <!-- remove objects that are not needed in virtual cockpit view -->
+ 
+<!-- 
+ <animation>
+   <name>notFromCockpit</name>
+     <object-name>TailWheelFork</object-name>
+     <object-name>TailWheelTire</object-name>
+     <object-name>TailWheelRim</object-name>
+     <object-name>Spinner</object-name>
+     <object-name>CanopyFrame</object-name>
+     <object-name>Canopy</object-name>
+     <object-name>Windscreen</object-name>
+ </animation> 
+
+
+ <animation>
+  <type>select</type>
+  <object-name>InteriorGroup</object-name>  
+  <object-name>notFromCockpit</object-name>
+  <condition>
+    <not>
+     <property>/sim/current-view/internal</property>
+    </not>
+  </condition>
+ </animation>
+
+ <animation>
+  <type>noshadow</type>
+  <object-name>Canopy</object-name>
+  <object-name>Windscreen</object-name>
+ </animation>
+ 
+-->  
+      
+
+ <!-- Gear ************************-->
+
+<!-- Nose gear extension -->
+<!-- Door + scoop -->
+<animation>
+  <type>rotate</type>
+  <object-name>NoseDoor</object-name>
+  <object-name>NoseScoop</object-name>
+  <object-name>ScoopCylinder</object-name>
+  <object-name>ScoopRam</object-name>  
+  <property>gear/gear/position-norm</property>
+  <interpolation>
+     <entry><ind>  0.2</ind><dep>  0.0</dep></entry>
+     <entry><ind>  1.0</ind><dep>  -120</dep></entry>
+  </interpolation>
+  <center>
+   <x-m>-7.77</x-m>
+   <y-m>0.0</y-m>
+   <z-m>-0.545</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>1.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+ 
+
+<!-- scoop --> 
+
+<animation>
+  <type>rotate</type>
+  <object-name>NoseScoop</object-name>
+  <object-name>ScoopRam</object-name>  
+  <property>gear/gear/position-norm</property>
+  <interpolation>
+     <entry><ind>  0.0</ind><dep>  0.0</dep></entry>
+     <entry><ind>  0.2</ind><dep>  -20</dep></entry>
+  </interpolation>
+  <center>
+   <x-m>-8.305</x-m>
+   <y-m>0.0</y-m>
+   <z-m>-0.453</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>1.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation> 
+ 
+<!-- Strut --> 
+ 
+<animation>
+  <type>rotate</type>
+  <object-name>NoseStrut</object-name>
+  <object-name>NoseOleo</object-name>  
+  <object-name>LeftTyre</object-name>  
+  <object-name>LeftRim</object-name>  
+  <object-name>RightRim</object-name>        
+  <object-name>RightTyre</object-name>          
+  <property>gear/gear/position-norm</property>
+  <interpolation>
+     <entry><ind>  0.2</ind><dep>  115.0</dep></entry>
+     <entry><ind>  1.0</ind><dep>  0.0</dep></entry>
+  </interpolation>
+  <center>
+   <x-m>-7.924</x-m>
+   <y-m>0.0</y-m>
+   <z-m>-0.392</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>1.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation> 
+
+<!-- main gear extension --> 
+
+<animation>
+  <type>rotate</type>
+  <object-name>MainStrut.001</object-name>
+  <object-name>Skid.001</object-name>
+  <object-name>LowerStrut.001</object-name>    
+  <property>gear/gear/position-norm</property>
+  <interpolation>
+     <entry><ind>  0.7</ind><dep>  0.0</dep></entry>
+     <entry><ind>  1.0</ind><dep>  90</dep></entry>
+  </interpolation>
+  <center>
+   <x-m>4.340</x-m>
+   <y-m>0.500</y-m>
+   <z-m>-0.640</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>-0.119</y>
+   <z>-0.095</z>
+  </axis>
+ </animation>
+
+<animation> 
+ <type>rotate</type>
+  <object-name>MainStrut</object-name>
+  <object-name>Skid</object-name>
+  <object-name>LowerStrut</object-name>    
+  <property>gear/gear/position-norm</property>
+  <interpolation>
+     <entry><ind>  0.7</ind><dep>  0.0</dep></entry>
+     <entry><ind>  1.0</ind><dep>  -90</dep></entry>
+  </interpolation>
+  <center>
+   <x-m>4.340</x-m>
+   <y-m>-0.500</y-m>
+   <z-m>-0.640</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>0.119</y>
+   <z>-0.095</z>
+  </axis>
+ </animation>
+ 
+<animation>
+ <type>rotate</type>
+  <object-name>Skid</object-name>
+  <property>gear/gear/position-norm</property>
+  <interpolation>
+     <entry><ind>  0.7</ind><dep>  0.0</dep></entry>
+     <entry><ind>  1.0</ind><dep>  100</dep></entry>
+  </interpolation>
+  <center>
+   <x-m>2.851</x-m>
+   <y-m>-0.512</y-m>
+   <z-m>-0.654</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>0.119</y>
+   <z>-0.095</z>
+  </axis> 
+ </animation>
+ 
+<animation>
+ <type>rotate</type>
+  <object-name>Skid.001</object-name>
+  <property>gear/gear/position-norm</property>
+  <interpolation>
+     <entry><ind>  0.7</ind><dep>  0.0</dep></entry>
+     <entry><ind>  1.0</ind><dep>  -100</dep></entry>
+  </interpolation>
+  <center>
+   <x-m>2.851</x-m>
+   <y-m>0.512</y-m>
+   <z-m>-0.654</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>-0.119</y>
+   <z>-0.095</z>
+  </axis> 
+ </animation>  
+ 
+
+<!-- <animation>
+  <type>rotate</type>
+  <object-name>TailWheelFork</object-name>
+  <object-name>TailWheelTire</object-name>
+  <object-name>TailWheelRim</object-name>  
+  <property>/fdm/jsbsim/fcs/steer-pos-deg[2]</property>
+  <factor>1.0</factor>
+  <center>
+   <x-m>4.59</x-m>
+   <y-m>0.0</y-m>
+   <z-m>-0.38</z-m>
+  </center>
+  <axis>
+   <x>0.25</x>
+   <y>0.00</y>
+   <z>1.0</z>
+  </axis>
+ </animation> -->
+ 
+ <!--
+  <animation>
+  <type>spin</type>
+  <object-name>MainGearTire</object-name>
+  <object-name>MainGearHub</object-name>  
+  <object-name>MainGearTire.001</object-name>
+  <object-name>MainGearHub.001</object-name>   
+  <condition>
+   <and>
+    <less-than>
+     <property>/position/altitude-agl-ft</property> 
+     <value>50.0</value>
+    </less-than>
+    <property>/gear/gear[0]/wow</property> 
+   </and>
+  </condition>
+  <property>/velocities/uBody-fps</property>
+  <factor>-2.0</factor>
+  <center>
+   <x-m>-0.133</x-m>
+   <y-m>0</y-m>
+   <z-m>-1.363</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+-->
+
+<!--
+  <animation>
+  <type>spin</type>
+  <object-name>TailWheelTire</object-name>
+  <object-name>TailWheelRim</object-name>  
+  <condition>
+   <and>
+    <less-than>
+     <property>/position/altitude-agl-ft</property> 
+     <value>50.0</value>
+    </less-than>
+    <property>/gear/gear[0]/wow</property>
+   </and>
+  </condition>
+  <property>/velocities/uBody-fps</property>
+  <factor>-2.0</factor>
+  <center>
+   <x-m>4.721</x-m>
+   <y-m>0</y-m>
+   <z-m>-0.545</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ 
+-->
+ 
+ <!-- Flight Controls ************************-->
+
+ <animation>
+  <type>rotate</type>
+  <object-name>Stabiliser.001</object-name>
+  <property>/fdm/jsbsim/fcs/left-aileron-pos-rad</property>
+  <factor>-57.32</factor>
+  <center>
+   <x-m>3.686</x-m>
+   <y-m>-1.069</y-m>
+   <z-m>-0.031</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>0.966</y>
+   <z>-0.259</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>Stabiliser</object-name>
+  <property>/fdm/jsbsim/fcs/left-aileron-pos-rad</property>
+  <factor>-57.32</factor>
+  <center>
+   <x-m>3.686</x-m>
+   <y-m>1.069</y-m>
+   <z-m>-0.031</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>-0.966</y>
+   <z>-0.259</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>Stabiliser.001</object-name>
+  <property>/fdm/jsbsim/fcs/elevator-pos-rad</property>
+  <factor>57.32</factor>
+  <center>
+   <x-m>3.686</x-m>
+   <y-m>-1.069</y-m>
+   <z-m>-0.031</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>0.966</y>
+   <z>-0.259</z>
+  </axis>
+ </animation>
+ 
+ <animation>
+  <type>rotate</type>
+  <object-name>Stabiliser</object-name>
+  <property>/fdm/jsbsim/fcs/elevator-pos-rad</property>
+  <factor>-57.32</factor>
+  <center>
+   <x-m>3.686</x-m>
+   <y-m>1.069</y-m>
+   <z-m>-0.031</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>-0.966</y>
+   <z>-0.259</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>UpperRudder</object-name>
+  <property>/fdm/jsbsim/fcs/rudder-pos-rad</property>
+  <factor>-57.32</factor>
+  <center>
+   <x-m>3.378</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.0</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>0</y>
+   <z>1</z>
+  </axis>
+ </animation>
+ 
+<!-- Speed brakes ************************************-->
+
+<!-- upper left -->
+
+<animation>
+  <type>rotate</type>
+  <object-name>UpperSpdBrk</object-name>
+  <property>/fdm/jsbsim/fcs/speedbrake-cmd-norm</property>
+  <factor>-30</factor>
+  <center>
+   <x-m>4.271</x-m>
+   <y-m>-0.120</y-m>
+   <z-m>0.878</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>-0.011</y>
+   <z>0.223</z>
+  </axis>
+ </animation> 
+ 
+ 
+<!-- upper right -->
+ 
+<animation>
+  <type>rotate</type>
+  <object-name>UpperSpdBrk.001</object-name>
+  <property>/fdm/jsbsim/fcs/speedbrake-cmd-norm</property>
+  <factor>30</factor>
+  <center>
+   <x-m>4.271</x-m>
+   <y-m>0.122</y-m>
+   <z-m>0.878</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>0.011</y>
+   <z>0.223</z>
+  </axis>
+ </animation>  
+
+<!-- lower left -->
+
+<animation>
+  <type>rotate</type>
+  <object-name>LowerSpdBrk</object-name>
+  <property>/fdm/jsbsim/fcs/speedbrake-cmd-norm</property>
+  <factor>30</factor>
+  <center>
+   <x-m>4.271</x-m>
+   <y-m>-0.120</y-m>
+   <z-m>-0.971</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>-0.011</y>
+   <z>-0.223</z>
+  </axis>
+ </animation> 
+ 
+ 
+<!-- lower right -->
+ 
+<animation>
+  <type>rotate</type>
+  <object-name>LowerSpdBrk.002</object-name>
+  <property>/fdm/jsbsim/fcs/speedbrake-cmd-norm</property>
+  <factor>-30</factor>
+  <center>
+   <x-m>4.271</x-m>
+   <y-m>0.122</y-m>
+   <z-m>-0.971</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>0.011</y>
+   <z>-0.223</z>
+  </axis>
+ </animation>
+ 
+<!-- Flaps -->
+ 
+<!-- left -->
+
+<animation>
+  <type>rotate</type>
+  <object-name>Flap</object-name>
+  <property>/fdm/jsbsim/fcs/speedbrake-cmd-norm</property>
+  <factor>30</factor>
+  <center>
+   <x-m>1.345</x-m>
+   <y-m>0.0</y-m>
+   <z-m>-0.034</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>1.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation> 
+ 
+ 
+<!-- right -->
+ 
+<animation>
+  <type>rotate</type>
+  <object-name>Flap.001</object-name>
+  <property>/fdm/jsbsim/fcs/speedbrake-cmd-norm</property>
+  <factor>30</factor>
+  <center>
+   <x-m>1.345</x-m>
+   <y-m>0.0</y-m>
+   <z-m>-0.034</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>1.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>  
+ 
+
+
+ <!-- Inclusion of 2D panels  **************************************-->
+
+<!-- <model>
+  <name>2D panels</name>
+  <path>Aircraft/Su-26M/Models/Su-26M-panels.xml</path>
+  <offsets>
+   <x-m>0.0</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.0</z-m>
+  </offsets>
+ </model>-->
+ 
+<!-- Inclusion of virtual cockpit  **************************************-->
+
+<!-- <model>
+  <name>Virtual Cockpit</name>
+  <path>Aircraft/Su-26M/Models/Su-26M-cockpit.xml</path>
+  <offsets>
+   <x-m>0.0</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.0</z-m>
+  </offsets>
+ </model> -->
+ 
+<!-- Livery selection -->
+
+<!-- <animation>
+  <type>material</type>
+  <object-name>Fuselage</object-name>  
+  <object-name>LeftWing</object-name>  
+  <object-name>RightWing</object-name>
+  <object-name>Rudder</object-name>
+  <condition>
+    <not>
+     <property>/sim/current-view/internal</property>
+    </not>
+  </condition>
+  <texture>26pink.rgb</texture>
+ </animation>  -->
+ 
+
+</PropertyList>

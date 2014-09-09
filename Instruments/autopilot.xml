@@ -1,0 +1,187 @@
+<?xml version="1.0"?>
+
+<!--
+Default autopilot instrument.
+
+Started summer 2000 by David Megginson, david@megginson.com.
+
+This is an instrument configuration file for the open-source flight
+simulator FlightGear (www.flightgear.org).  The file is an XML-encoded
+FlightGear property list defining the instrument's layers and actions.
+
+Each instrument is composed of layers stacked on top of each other.
+A layer may be a texture (with transparent parts to show the layers
+underneath), text, or a special layer that switches between two
+others (say, to turn an indicator light on or off).  Each layer can
+move independently in proportion to a property value, and text
+can be generated from property values as well: all of the layer's
+movements are defined as transformations.
+
+Actions are hotspots on the instrument that will respond to a mouse
+click.  Actions always modify the values of properties, either by
+adjusting them, toggling them, or swaping them with other
+properties' values.
+-->
+
+<PropertyList>
+ <name>autopilot</name>
+ <w-base>128</w-base>
+ <h-base>128</h-base>
+
+ <layers>
+
+  <l1>
+   <name>background</name>
+   <texture>
+    <path>Instruments/Default/Textures/radios-1.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.375</y1>
+    <x2>1.0</x2>
+    <y2>0.5</y2>
+   </texture>
+   <w>256</w>
+   <h>32</h>
+  </l1>
+
+  <l2>
+   <name>HDG button</name>
+   <type>switch</type>
+   <property>/autopilot/locks/heading</property>
+   <layer>
+    <name>HDG on</name>
+    <texture>
+     <path>Instruments/Default/Textures/misc-1.rgb</path>
+     <x1>0.3046875</x1>
+     <y1>0.921875</y1>
+     <x2>0.421875</x2>
+     <y2>1.0</y2>
+    </texture>
+    <w>32</w>
+    <h>16</h>
+   </layer>
+   <layer>
+    <name>HDG off</name>
+    <texture>
+     <path>Instruments/Default/Textures/misc-1.rgb</path>
+     <x1>0.171875</x1>
+     <y1>0.921875</y1>
+     <x2>0.2890625</x2>
+     <y2>1.0</y2>
+    </texture>
+    <w>32</w>
+    <h>16</h>
+   </layer>
+   <transformations>
+    <t1>
+     <type>x-shift</type>
+     <offset>-64</offset>
+    </t1>
+   </transformations>
+  </l2>
+
+  <l3>
+   <name>NAV button</name>
+   <type>switch</type>
+   <property>/autopilot/locks/nav[0]</property>
+   <layer>
+    <name>NAV on</name>
+    <texture>
+     <path>Instruments/Default/Textures/misc-1.rgb</path>
+     <x1>0.3046875</x1>
+     <y1>0.828125</y1>
+     <x2>0.421875</x2>
+     <y2>0.90625</y2>
+    </texture>
+    <w>32</w>
+    <h>16</h>
+   </layer>
+   <layer>
+    <name>NAV off</name>
+    <texture>
+     <path>Instruments/Default/Textures/misc-1.rgb</path>
+     <x1>0.171875</x1>
+     <y1>0.828125</y1>
+     <x2>0.2890625</x2>
+     <y2>0.90625</y2>
+    </texture>
+    <w>32</w>
+    <h>16</h>
+   </layer>
+   <transformations>
+    <t1>
+     <type>x-shift</type>
+     <offset>-32</offset>
+    </t1>
+   </transformations>
+  </l3>
+
+  <l4>
+   <name>ALT button</name>
+   <type>switch</type>
+   <property>/autopilot/locks/altitude</property>
+   <layer>
+    <name>ALT on</name>
+    <texture>
+     <path>Instruments/Default/Textures/misc-1.rgb</path>
+     <x1>0.3046875</x1>
+     <y1>0.640625</y1>
+     <x2>0.421875</x2>
+     <y2>0.71875</y2>
+    </texture>
+    <w>32</w>
+    <h>16</h>
+   </layer>
+   <layer>
+    <name></name>
+    <texture>
+     <path>Instruments/Default/Textures/misc-1.rgb</path>
+     <x1>0.171875</x1>
+     <y1>0.640625</y1>
+     <x2>0.2890625</x2>
+     <y2>0.71875</y2>
+    </texture>
+    <w>32</w>
+    <h>16</h>
+   </layer>
+  </l4>
+
+ </layers>
+
+ <actions>
+
+  <a1>
+   <name>toggle heading lock</name>
+   <type>toggle</type>
+   <property>/autopilot/locks/heading</property>
+   <button>0</button>
+   <x>-80</x>
+   <y>-8</y>
+   <w>32</w>
+   <h>16</h>
+  </a1>
+
+  <a2>
+   <name>toggle nav1 lock</name>
+   <type>toggle</type>
+   <property>/autopilot/locks/nav[0]</property>
+   <button>0</button>
+   <x>-48</x>
+   <y>-8</y>
+   <w>32</w>
+   <h>16</h>
+  </a2>
+
+  <a3>
+   <name>toggle altitude lock</name>
+   <type>toggle</type>
+   <property>/autopilot/locks/altitude</property>
+   <button>0</button>
+   <x>-16</x>
+   <y>-8</y>
+   <w>32</w>
+   <h>16</h>
+  </a3>
+
+ </actions>
+
+</PropertyList>

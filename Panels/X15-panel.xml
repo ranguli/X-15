@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+
+<!--
+Preliminary X-15 Panel
+
+October 2000
+John Check <j4strngs@usa.net>
+__________________________________________________________________
+
+This is a panel configuration file for the open-source flight
+simulator FlightGear (www.flightgear.org).  The file is an XML-encoded
+FlightGear property list defining the panel's background texture and
+the location (and optionally, size) of the instruments that will
+appear on the panel.
+
+Each instrument is, itself, defined in an XML-encoded property list
+in a separate file.
+
+Co-ordinates are relative to the *bottom* left corner of the screen
+(as in OpenGL).  The total FlightGear window is always considered to
+be 1024x768, whatever its actual display size on the screen.  All
+paths are relative to $FG_ROOT.
+
+Note that the name of the element defining each instrument must be
+different, or else instrument definitions will be overwritten:
+that's not particularly XML-ish, but that's how property lists
+work in FlightGear right now.
+
+Each instrument has its own preferred width and height, but you can
+override those by providing <w>..</w> and <h>..</h> properties with the
+<x>...</x> and <y>...</y> properties.
+-->
+
+<PropertyList>
+ <name>X-15 Rocket Plane Panel</name>
+  <background>Aircraft/X15/Panels/Textures/x15-bg.rgb</background>
+  <w>1024</w>
+  <h>768</h>
+  <y-offset>-305</y-offset>
+  <view-height>275</view-height>
+
+ <instruments>
+
+  <instrument include="../Instruments/inertialclimb.xml">
+   <name>Inertial Climb</name>
+   <x>715</x>
+   <y>505</y>
+   <w>128</w>
+   <h>128</h>
+  </instrument>
+
+  <instrument include="../Instruments/inertialheight.xml">
+   <name>Inertial Height</name>
+   <x>635</x>
+   <y>615</y>
+   <w>128</w>
+   <h>128</h>
+  </instrument>
+
+  <instrument include="../Instruments/accelerometer.xml">
+   <name>Acceleration</name>
+   <x>375</x>
+   <y>615</y>
+   <w>128</w>
+   <h>128</h>
+  </instrument>
+
+  <instrument include="../Instruments/aoa.xml">
+   <name>AOA</name>
+   <x>375</x>
+   <y>400</y>
+   <w>128</w>
+   <h>128</h>
+  </instrument>
+
+  <instrument include="../Instruments/altimeter.xml">
+   <name>Altimeter</name>
+   <x>290</x>
+   <y>505</y>
+   <w>128</w>
+   <h>128</h>
+  </instrument>
+
+  <instrument include="../Instruments/dynamic_press.xml">
+   <name>Dynamic Pressure</name>
+   <x>506</x>
+   <y>650</y>
+   <w>128</w>
+   <h>128</h>
+  </instrument>
+
+  <instrument include="../Instruments/attitude-indicator.xml">
+   <name>Attitude Indicator</name>
+   <x>506</x>
+   <y>505</y>
+   <w>150</w>
+   <h>150</h>
+  </instrument>
+  
+  <instrument include="../Instruments/inertialspeed.xml">
+   <name>Inertial Speed</name>
+   <x>635</x>
+   <y>400</y>
+   <w>128</w>
+   <h>128</h>
+  </instrument>
+
+  <instrument include="../Instruments/roll.xml">
+   <name>Roll Indicator</name>
+   <x>512</x>
+   <y>375</y>
+   <w>128</w>
+   <h>96</h>
+  </instrument>
+
+ </instruments>
+</PropertyList>

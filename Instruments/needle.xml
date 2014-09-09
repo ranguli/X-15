@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<PropertyList>
+   <name>needle</name>
+   <texture>
+    <path>Aircraft/Instruments/Textures/misc-1.rgb</path>
+    <x1>0.8</x1>
+    <y1>0.78125</y1>
+    <x2>0.8375</x2>
+    <y2>1.0</y2>
+   </texture>
+</PropertyList>

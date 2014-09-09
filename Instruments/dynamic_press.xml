@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+
+<!--
+X-15 dynamic pressure instrument.
+November 2000
+John Check
+______________________________________________________________________
+
+This is an instrument configuration file for the open-source flight
+simulator FlightGear (www.flightgear.org).  The file is an XML-encoded
+FlightGear property list defining the instrument's layers and actions.
+
+Each instrument is composed of layers stacked on top of each other.
+A layer may be a texture (with transparent parts to show the layers
+underneath), text, or a special layer that switches between two
+others (say, to turn an indicator light on or off).  Each layer can
+move independently in proportion to a property value, and text
+can be generated from property values as well: all of the layer's
+movements are defined as transformations.
+
+Actions are hotspots on the instrument that will respond to a mouse
+click.  Actions always modify the values of properties, either by
+adjusting them, toggling them, or swaping them with other
+properties' values.
+-->
+
+<PropertyList>
+ <name>dynamic pressure</name>
+ <w-base>110</w-base>
+ <h-base>110</h-base>
+
+ <params>
+  <dynamic-pressure>/velocities/airspeed-kt</dynamic-pressure>
+ </params>
+
+ <layers>
+
+  <layer include="./dynamic-pressure-face.xml">
+  </layer>
+  
+  <layer include="./needle.xml">
+   <w>8</w>
+   <h>45</h>
+   <transformations>
+    <transformation>
+     <type>rotation</type>
+     <property alias="../../../../../params/dynamic-pressure"/>
+     <min>0.0</min>
+     <max>250.0</max>
+     <scale>1</scale>
+     <offset>210</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>23</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+  <layer include="./center-cap.xml">
+  <w>16</w>
+  <h>16</h>
+  </layer>
+
+ </layers>
+</PropertyList>

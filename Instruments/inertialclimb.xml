@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+
+<!--
+X-15 inertial climb instrument.
+November 2000
+John Check
+______________________________________________________________________
+
+This is an instrument configuration file for the open-source flight
+simulator FlightGear (www.flightgear.org).  The file is an XML-encoded
+FlightGear property list defining the instrument's layers and actions.
+
+Each instrument is composed of layers stacked on top of each other.
+A layer may be a texture (with transparent parts to show the layers
+underneath), text, or a special layer that switches between two
+others (say, to turn an indicator light on or off).  Each layer can
+move independently in proportion to a property value, and text
+can be generated from property values as well: all of the layer's
+movements are defined as transformations.
+
+Actions are hotspots on the instrument that will respond to a mouse
+click.  Actions always modify the values of properties, either by
+adjusting them, toggling them, or swaping them with other
+properties' values.
+-->
+
+<PropertyList>
+ <name>inertial climb</name>
+ <w-base>110</w-base>
+ <h-base>110</h-base>
+ 
+ <params>
+  <vertical-speed>/instrumentation/vertical-speed-indicator/indicated-speed-fpm</vertical-speed>
+ </params> 
+
+ <layers>
+
+  <layer include="./X15-inertial-climb-face.xml">
+  </layer>
+  
+  <layer include="./needle.xml">
+   <w>8</w>
+   <h>45</h>
+   <transformations>
+    <transformation>
+    <type>x-shift</type>
+    <offset>22</offset>
+    </transformation>
+    <transformation>
+     <type>rotation</type>
+     <property alias="../../../../../params/vertical-speed"/>
+     <min>-1000.0</min>
+     <max>1000.0</max>
+     <scale>0.00835</scale>
+     <offset>270</offset>
+    <wrap>false</wrap>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>20</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+  <layer include="./center-cap.xml">
+  <w>16</w>
+  <h>16</h>
+   <transformations>
+    <transformation>
+    <type>x-shift</type>
+    <offset>24</offset>
+    </transformation>
+  </transformations>
+  </layer>
+
+ </layers>
+</PropertyList>

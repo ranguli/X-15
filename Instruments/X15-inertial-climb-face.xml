@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<PropertyList>
+  <name>X15 inertial climb instrument face</name>
+   <texture>
+    <path>Aircraft/X15/Instruments/Textures/x15-faces-2.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.0</y1>
+    <x2>0.5</x2>
+    <y2>0.5</y2>
+   </texture>
+</PropertyList>

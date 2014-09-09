@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<PropertyList>
+ <name>X15 airspeed face</name>
+   <texture>
+    <path>Instruments/Default/Textures/faces-2.rgb</path>
+    <x1>0</x1>
+    <y1>0.5</y1>
+    <x2>0.5</x2>
+    <y2>1.0</y2>
+   </texture>
+</PropertyList>

@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+
+<!--
+Default digital clock instrument.
+
+Started summer 2000 by David Megginson, david@megginson.com.
+
+This is an instrument configuration file for the open-source flight
+simulator FlightGear (www.flightgear.org).  The file is an XML-encoded
+FlightGear property list defining the instrument's layers and actions.
+
+Each instrument is composed of layers stacked on top of each other.
+A layer may be a texture (with transparent parts to show the layers
+underneath), text, or a special layer that switches between two
+others (say, to turn an indicator light on or off).  Each layer can
+move independently in proportion to a property value, and text
+can be generated from property values as well: all of the layer's
+movements are defined as transformations.
+
+Actions are hotspots on the instrument that will respond to a mouse
+click.  Actions always modify the values of properties, either by
+adjusting them, toggling them, or swaping them with other
+properties' values.
+-->
+
+<PropertyList>
+ <name>Digital Clock</name>
+ <w>112</w>
+ <h>112</h>
+
+ <layers>
+
+ <l0>
+   <texture>
+   <name>bg1</name>
+    <path>Panels/Custom/Textures/dplatetrim.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.0</y1>
+    <x2>0.5</x2>
+    <y2>0.4</y2>
+   </texture>
+   <w>64</w>
+   <h>64</h>
+  <transformations>
+   <t1>
+   <type>x-shift</type>
+   <offset>28</offset>
+   </t1>
+   <t2>
+   <type>y-shift</type>
+   <offset>48</offset>
+   </t2>
+  </transformations>  
+</l0>
+ <!-- l01>
+   <texture>
+   <name>bg1</name>
+    <path>Panels/Custom/Textures/dplatetrim.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.0</y1>
+    <x2>0.5</x2>
+    <y2>0.45</y2>
+   </texture>
+   <w>64</w>
+   <h>96</h>
+  <transformations>
+   <t1>
+   <type>x-shift</type>
+   <offset>-32</offset>
+   </t1>
+   <t2>
+   <type>y-shift</type>
+   <offset>32</offset>
+   </t2>
+  </transformations>  
+</l01 -->
+  <l1>
+   <name>clock background</name>
+   <texture>
+    <path>Instruments/Default/Textures/faces-3.rgb</path>
+    <x1>0.5</x1>
+    <y1>0.0</y1>
+    <x2>1.0</x2>
+    <y2>0.5</y2>
+   </texture>
+  </l1>
+
+  <l2>
+   <name>display</name>
+   <type>text</type>
+   <point-size>14</point-size>
+   <color>
+    <red>0.0</red>
+    <green>0.0</green>
+    <blue>0.0</blue>
+   </color>
+   <chunks>
+    <ch1>
+     <type>text-value</type>
+     <property>/sim/time/gmt-string</property>
+    </ch1>
+   </chunks>
+   <transformations>
+    <t1>
+     <type>x-shift</type>
+     <offset>-43</offset>
+    </t1>
+    <t2>
+     <type>y-shift</type>
+     <offset>-7</offset>
+    </t2>
+   </transformations>
+  </l2>
+
+ </layers>
+
+</PropertyList>

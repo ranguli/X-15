@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <name>accelerometer face</name>
+ <texture>
+  <path>Aircraft/X15/Instruments/Textures/x15-faces-2.rgb</path>
+  <x1>0.0</x1>
+  <y1>0.5</y1>
+  <x2>0.5</x2>
+  <y2>1.0</y2>
+ </texture>
+
+</PropertyList>
