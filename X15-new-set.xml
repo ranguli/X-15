@@ -2,7 +2,7 @@
 <!--
 ************************************************************************
 X15 simulation config. This files ties together all the components
-used by FGFS to represent the X15. Components include the flight data 
+used by FGFS to represent the X15. Components include the flight data
 model, instrument panel, and external 3D model.
 3D models can be downloaded from http://home.t-online.de/home/Wolfram.Kuss/
 
@@ -16,7 +16,7 @@ October 23 2001 John Check, fgpanels@rockfish.net
 
   <description>North American X-15</description>
   <author>Mike Hill, Jon S. Berndt (FDM), John Check</author>
-
+  <variant-of>X15</variant-of>
 
   <startup>
    <speed-set>knots</speed-set>
@@ -33,16 +33,16 @@ October 23 2001 John Check, fgpanels@rockfish.net
   <panel_2>
    <path>Aircraft/Generic/Panels/generic-trans-mini-panel.xml</path>
   </panel_2>
-  
+
   <model>
    <path>Aircraft/X15/Models/X15.xml</path>
-  </model> 
+  </model>
 
 
   <help>
    <title>X-15</title>
   </help>
-  
+
  </sim>
 
  <autopilot>
@@ -65,12 +65,12 @@ October 23 2001 John Check, fgpanels@rockfish.net
  <velocities>
   <airspeed-kt>350</airspeed-kt>
  </velocities>
- 
+
  <!-- Key bindings -->
- 
+
   <input>
    <keyboard>
-   
+
     <key n="82">
      <name>Shift-r</name>
      <desc>Open speed brakes</desc>
@@ -81,7 +81,7 @@ October 23 2001 John Check, fgpanels@rockfish.net
       <max>1.0</max>
     </binding>
     </key>
-    
+
     <key n="70">
      <name>Shift-f</name>
      <desc>Close speed brakes</desc>
@@ -92,11 +92,8 @@ October 23 2001 John Check, fgpanels@rockfish.net
       <min>0.0</min>
     </binding>
     </key>
-    
+
    </keyboard>
-  </input>  
+  </input>
 
 </PropertyList>
-
-
-
