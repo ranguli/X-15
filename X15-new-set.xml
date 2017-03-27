@@ -18,6 +18,15 @@ October 23 2001 John Check, fgpanels@rockfish.net
   <author>Mike Hill, Jon S. Berndt (FDM), John Check</author>
   <variant-of>X15</variant-of>
 
+  <tags>
+      <tag>spaceship</tag>
+      <tag>1960s</tag>
+      <tag>experimental</tag>
+      <tag>supersonic</tag>
+      <tag>rocket</tag>
+      <tag>single-engine</tag>
+  </tags>
+
   <startup>
    <speed-set>knots</speed-set>
    <onground>false</onground>

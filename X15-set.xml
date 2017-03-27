@@ -17,6 +17,14 @@ October 23 2001 John Check, fgpanels@rockfish.net
   <description>North American X-15</description>
   <author>Mike Hill, Jon S. Berndt (FDM), John Check</author>
 
+  <tags>
+      <tag>spaceship</tag>
+      <tag>1960s</tag>
+      <tag>experimental</tag>
+      <tag>supersonic</tag>
+      <tag>rocket</tag>
+      <tag>single-engine</tag>
+  </tags>
 
   <startup>
    <speed-set>knots</speed-set>
